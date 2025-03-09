@@ -1,0 +1,6 @@
+services:
+  comandas.api:
+    image: ${DOCKER_REGISTRY-}comandasapi
+    build:
+      context: .
+      dockerfile: Comandas.Api/Dockerfile
