@@ -38,16 +38,16 @@ namespace Comandas.Api.Data
                 .HasForeignKey(pi => pi.PedidoCozinhaId);
 
             modelBuilder.Entity<PedidoCozinhaItem>()
-                .HasOne(p => p.PedidoCozinha)
-                .WithMany(p => PedidoCozinhaItem)
-                .HasForeignKey(p => p.PedidoCozinhaId);
-
-            modelBuilder.Entity<PedidoCozinhaItem>()
                 .HasOne(p => p.ComandaItem)
                 .WithMany()
                 .HasForeignKey(p => p.ComandaItemId);
 
+            base.OnModelCreating(modelBuilder);
+        }
 
+        public ComandasDbContext()
+        {
+            
         }
     }
 }

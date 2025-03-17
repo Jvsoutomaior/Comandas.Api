@@ -12,6 +12,11 @@ namespace Comandas.Api.Models
         public int NumeroMesa { get; set; }
         public string NomeCliente { get; set; }
         public int SituacaoComanda { get; set; } = 1;
-        public virtual ICollection<ComandaItem> ComandaItems { get; set; }
+        public virtual ICollection<ComandaItem> ComandaItems { get; set; } = null!;
+
+        public Comanda()
+        {
+            
+        }
     }
 }
